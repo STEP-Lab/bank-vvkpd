@@ -21,4 +21,9 @@ public class AccountTest {
   public void getAccountNumber() {
     assertThat(pandey.getAccountNumber(),is(1234.0));
   }
+
+  @Test
+  public void getAccountHolder() {
+    assertThat(pandey.getAccountHolder(),is("pandey"));
+  }
 }

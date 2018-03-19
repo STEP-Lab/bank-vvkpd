@@ -18,4 +18,8 @@ public class Account {
   public double getAccountNumber() {
     return accountNumber;
   }
+
+  public String getAccountHolder() {
+    return accountHolder;
+  }
 }
