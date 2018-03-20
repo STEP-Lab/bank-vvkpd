@@ -5,9 +5,11 @@ public class Account {
   private final double accountNumber;
   private double balance;
 
-  public Account(String accountHolder, double accountNumber, double balance) {
+  public Account(String accountHolder, double accountNumber, double balance) throws MinimumBalanceException {
     this.accountHolder = accountHolder;
     this.accountNumber = accountNumber;
+    if(balance <= 1000)
+      throw new MinimumBalanceException();
     this.balance = balance;
   }
 

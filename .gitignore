@@ -11,6 +11,6 @@ application/build
 application/out
 application/.settings
 library/build
-library/out
+out
 library/.settings
 *.iml
