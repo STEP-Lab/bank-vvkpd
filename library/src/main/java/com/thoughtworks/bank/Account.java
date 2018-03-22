@@ -2,12 +2,10 @@ package com.thoughtworks.bank;
 
 public class Account {
   private final String accountHolder;
-  private final String accountNumber;
+  private final AccountNumber accountNumber;
   private double balance;
 
-  public Account(String accountHolder, String accountNumber, double balance) throws MinimumBalanceException, AccountNumberException {
-    if (!accountNumber.matches("^\\d{4}-\\d{4}$"))
-      throw new AccountNumberException(accountNumber);
+  public Account(String accountHolder, AccountNumber accountNumber, double balance) throws MinimumBalanceException {
     if(balance <= 1000)
       throw new MinimumBalanceException();
     this.accountHolder = accountHolder;
@@ -15,14 +13,8 @@ public class Account {
     this.balance = balance;
   }
 
-
-
   public double getBalance() {
     return balance;
-  }
-
-  public String getAccountNumber() {
-    return accountNumber;
   }
 
   public String getAccountHolder() {
