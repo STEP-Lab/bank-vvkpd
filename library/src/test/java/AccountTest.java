@@ -9,12 +9,12 @@ public class AccountTest {
   private Account pandey;
   @Before
   public void setUp() throws MinimumBalanceException, AccountNumberException {
-    pandey = new Account("pandey", new AccountNumber("1234-1234"), 2000);
+    pandey = Account.create("pandey", AccountNumber.createAccountNumber("1234-1234"), 2000);
   }
 
   @Test(expected = MinimumBalanceException.class)
   public void checkMinimumBalException() throws MinimumBalanceException, AccountNumberException {
-    new Account("pandey",new AccountNumber("1234-1344"),1000.0d);
+    Account.create("pandey", AccountNumber.createAccountNumber("1234-1344"),1000.0d);
   }
 
   @Test
