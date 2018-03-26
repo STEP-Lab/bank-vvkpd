@@ -7,7 +7,11 @@ public abstract class Transaction {
   private final double amount;
   private final Date date;
 
-  public Transaction(double amount) {
+  public Date getDate() {
+    return date;
+  }
+
+  protected Transaction(double amount) {
     this.amount = amount;
     this.date = new Date();
   }
