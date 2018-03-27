@@ -1,5 +1,5 @@
-import com.thoughtworks.bank.AccountNumber;
-import com.thoughtworks.bank.AccountNumberException;
+package com.thoughtworks.bank;
+
 import org.junit.Test;
 
 public class AccountNumberTest {

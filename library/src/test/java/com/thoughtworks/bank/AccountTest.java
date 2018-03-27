@@ -1,4 +1,5 @@
-import com.thoughtworks.bank.*;
+package com.thoughtworks.bank;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,7 +29,7 @@ public class AccountTest {
   }
 
   @Test
-  public void debit() throws InvalidAmountException {
+  public void checkDebit() throws InvalidAmountException {
     assertThat(pandey.getBalance(),is(2000.0));
     assertThat(pandey.debit(200),is(1800.0));
   }
@@ -37,5 +38,18 @@ public class AccountTest {
   public void checkDebitForInvalidAmount() throws InvalidAmountException {
     assertThat(pandey.getBalance(),is(2000.0));
     assertThat(pandey.debit(2100),is(1800.0));
+  }
+
+  @Test
+  public void checkCredit() throws InvalidAmountException {
+    assertThat(pandey.getBalance(),is(2000d));
+    assertThat(pandey.credit(200),is(2200d));
+  }
+
+  @Test(expected = InvalidAmountException.class)
+  public void checkCreditForInvalidAmount() throws InvalidAmountException {
+    assertThat(pandey.getBalance(),is(2000.0));
+    pandey.credit(-100);
+    assertThat(pandey.getBalance(),is(2000.0));
   }
 }

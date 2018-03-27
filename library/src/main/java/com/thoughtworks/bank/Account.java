@@ -34,4 +34,16 @@ public class Account {
     }
     throw new InvalidAmountException(amount);
   }
+
+  public double credit(double amount) throws InvalidAmountException {
+    if (canCredit(amount)) {
+      transactions.credit(amount);
+      return balance += amount;
+    }
+    throw new InvalidAmountException(amount);
+  }
+
+  private boolean canCredit(double amount) {
+    return amount > 0;
+  }
 }

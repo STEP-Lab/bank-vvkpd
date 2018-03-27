@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Transactions {
   private ArrayList<Transaction> transactions;
-  public Transactions() {
+  Transactions() {
     this.transactions = new ArrayList<>();
   }
 
@@ -14,5 +14,9 @@ public class Transactions {
 
   public ArrayList<Transaction> getTransactions() {
     return transactions;
+  }
+
+  public void credit(double amount) {
+    transactions.add(new CreditTransaction(amount));
   }
 }
